@@ -1,15 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>陈静机试</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./echarts.min.js"></script>
+  </head>
+  <body>
     <div class="box">
+      <div class="mianBox">
+        <!-- 上盒子 -->
+        <div class="headBox">
+          <!-- 待办事项盒子 -->
+          <div class="headBox-main">
+            <h3>待办事项</h3>
+            <ul class="flexrow">
+              <li>
+                <h4>待发货订单</h4>
+                <span>单位(笔)</span>
+                <h2 class="zise">4</h2>
+              </li>
+              <li>
+                <h4>待处理售后</h4>
+                <span>单位(笔)</span>
+                <h2 class="org">0</h2>
+              </li>
+              <li>
+                <h4>待付款订单</h4>
+                <span>单位(笔)</span>
+                <h2 class="gre">113</h2>
+              </li>
+              <li>
+                <h4>待补货商品</h4>
+                <span>单位(个)</span>
+                <h2 class="zise">0</h2>
+              </li>
+              <li>
+                <h4>待审核会员</h4>
+                <span>单位(个)</span>
+                <h2 class="org">0</h2>
+              </li>
+              <li>
+                <h4>待审核佣金</h4>
+                <span>单位(元)</span>
+                <h2 class="gre">948.19</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 中盒子 -->
+        <div class="centerBox flexrow">
+          <!-- 左边盒子 -->
+          <div class="left">
+            <div class="left_top">
+              <div class="top flexrow">
+                <h3>待办事项</h3>
+                <div class="top_rig">
+                  <button  onclick="tu(1)" class="tuOne">今天</button>
+                  <button onclick="tu(2)" class="tuOne">昨天</button>
+                  <button onclick="tu(3)" class="tuOne">近7日</button>
+                  <button onclick="tu(4)" class="tuOne">近30日</button>
+                </div>
+              </div>
+              <div class="bot">
+                <div id="bot-main" style="width: 100%; height: 100%"></div>
+              </div>
+            </div>
+          </div>
+          <!-- 右边盒子 -->
+          <div class="right">
+            <div class="right_top">
+              <div class="top flexrow">
+                <h3>新增订单</h3>
+                <div class="top_rig">
+                  <button >今天</button>
+                  <button>昨天</button>
+                  <button>近7日</button>
+                  <button>近30日</button>
+                </div>
+              </div>
+              <div class="bot">
+                <div id="bot-main" style="width: 100%; height: 100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 下盒子 -->
+        <div class="footBox">
+          <div class="foot_top">
+            <div class="menu flexrow">
+              <div class="text flexrow">
+                <h3>运营数据</h3>
+                <svg
+                  t="1683887984601"
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="2387"
+                  width="15"
+                  height="15"
+                >
+                  <path
+                    d="M463.99957 784.352211c0 26.509985 21.490445 48.00043 48.00043 48.00043s48.00043-21.490445 48.00043-48.00043c0-26.509985-21.490445-48.00043-48.00043-48.00043S463.99957 757.842226 463.99957 784.352211z"
+                    fill="#575B66"
+                    p-id="2388"
+                  ></path>
+                  <path
+                    d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"
+                    fill="#575B66"
+                    p-id="2389"
+                  ></path>
+                  <path
+                    d="M512 673.695256c-17.664722 0-32.00086-14.336138-32.00086-31.99914l0-54.112297c0-52.352533 39.999785-92.352318 75.32751-127.647359 25.887273-25.919957 52.67249-52.67249 52.67249-74.016718 0-53.343368-43.07206-96.735385-95.99914-96.735385-53.823303 0-95.99914 41.535923-95.99914 94.559333 0 17.664722-14.336138 31.99914-32.00086 31.99914s-32.00086-14.336138-32.00086-31.99914c0-87.423948 71.775299-158.559333 160.00086-158.559333s160.00086 72.095256 160.00086 160.735385c0 47.904099-36.32028 84.191695-71.424378 119.295794-27.839699 27.776052-56.575622 56.511974-56.575622 82.3356l0 54.112297C544.00086 659.328155 529.664722 673.695256 512 673.695256z"
+                    fill="#575B66"
+                    p-id="2390"
+                  ></path>
+                </svg>
+              </div>
+              <div class="dateBox">
+                <input type="date" value="2023-05-12" />
+                <span>-</span>
+                <input type="date" value="2023-05-12" />
 
+                <button onclick="huan(1)" class="col">今天</button>
+                <button onclick="huan(2)" class="col">昨天</button>
+                <button onclick="huan(3)" class="col">近7日</button>
+                <button onclick="huan(4)" class="col">近30日</button>
+              </div>
+            </div>
+          </div>
+          <div class="foot_bot flexrow-ab">
+            <!-- 左盒子 -->
+            <div class="foot_botLeft flexrow">
+              <div class="lefs">
+                <ul>
+                  <li>
+                    <span>成交金额(元)</span>
+                    <h2>796</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889731878"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="4244"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M512 322.56l284.587 378.88H227.413L512 322.56z"
+                            fill="#d81e06"
+                            p-id="4245"
+                          ></path>
+                        </svg>
+                        <span style="color: red">100%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>支付订单数(笔)</span>
+                    <h2>4</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889731878"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="4244"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M512 322.56l284.587 378.88H227.413L512 322.56z"
+                            fill="#d81e06"
+                            p-id="4245"
+                          ></path>
+                        </svg>
+                        <span style="color: red">-34.6%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>客单价(元)</span>
+                    <h2>199</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889909557"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="5300"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M862.752 326.016H161.248l349.696 371.936L862.72 326.016z"
+                            fill="#1afa29"
+                            p-id="5301"
+                          ></path>
+                        </svg>
+                        <span style="color: greenyellow">-34.6%</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="rigs">
+                <ul>
+                  <li>
+                    <span>退款金额(元)</span>
+                    <h2>0</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889731878"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="4244"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M512 322.56l284.587 378.88H227.413L512 322.56z"
+                            fill="#d81e06"
+                            p-id="4245"
+                          ></path>
+                        </svg>
+                        <span style="color: red">100%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>支付订单数(笔)</span>
+                    <h2>4</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889731878"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="4244"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M512 322.56l284.587 378.88H227.413L512 322.56z"
+                            fill="#d81e06"
+                            p-id="4245"
+                          ></path>
+                        </svg>
+                        <span>0.5%</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>客单价(元)</span>
+                    <h2>199</h2>
+                    <div class="widthBox flexrow">
+                      <p>较昨日</p>
+                      <div class="tubiao flexrow">
+                        <svg
+                          t="1683889909557"
+                          class="icon"
+                          viewBox="0 0 1024 1024"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          p-id="5300"
+                          width="15"
+                          height="15"
+                        >
+                          <path
+                            d="M862.752 326.016H161.248l349.696 371.936L862.72 326.016z"
+                            fill="#1afa29"
+                            p-id="5301"
+                          ></path>
+                        </svg>
+                        <span style="color: greenyellow">-34.6%</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 右盒子 -->
+            <div class="foot_botRight">
+              <div id="main" style="width: 100%; height: 100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+    <script>
+    //  图1
+      let top_rig=document.querySelector('.top_rig')
+      console.log(top_rig);   
+      let tuOne=document.querySelector('.tuOne')
+      top_rig.onclick=function(){
+      console.log(11);
+     
+      }
+   
+      let tu1=[0, 100, 0, 150, 0, 0, 650, 0, 0, 700, 0, 0]
+   
+    tuxuanRan()
+    function tu(index) {
+        if (index == 1) {
+            tu1 = [0, 0, 0, 150, 0, 0, 650, 0, 0, 0, 0, 0];
+        } else if (index == 2) {
+            tu1 = [0, 15, 62, 45, 80, 33, 100, 30, 28, 11, 70, 39];
+        } else if (index == 3) {
+            tu1 = [0, 35, 62, 45, 80, 19, 31, 54, 72, 12, 82, 0];
+        } else if (index == 4) {
+            tu1 = [0, 5, 62, 45, 52, 100, 82, 49, 12, 25, 22, 99];
+        }
+
+        tuxuanRan()
+      }
+    function tuxuanRan(){
+        var myChart = echarts.init(document.getElementById("bot-main"));
+     
+        option = {
+            title : {
+       
+          text: '单价(元)',
+          textStyle:{
+            fontSize: 12
+          }
+      
+    },
+          xAxis: {
+            type: "category",
+            data: [
+              "00:00",
+              "02:00",
+              "04:00",
+              "06:00",
+              "08:00",
+              "10:00",
+              "12:00",
+              "14:00",
+              "16:00",
+              "18:00",
+              "20:00",
+              "22:00",
+            ],
+          },
+          yAxis: {
+            type: "value",
+            data: ["0", "100", "200", "300", "400", "500", "600", "700"],
+          },
+          legend: {
+            orient: "horizontal",
+          },
+          series: [
+            {
+              name: "新增会员",
+              data: tu1,
+              type: "line",
+            },
+          ],
+        };
+        myChart.setOption(option);
+        
+    }
+
+    //图2
+
+      //委托
+      let dateBox = document.querySelector(".dateBox");
+      let col = document.querySelectorAll(".col");
+      dateBox.onclick = function () {
+        col.forEach((item, index) => {
+          item.style.backgroundColor = "";
+          item.style.color = "black";
+        });
+        event.target.style.backgroundColor = "blue";
+        event.target.style.color = "white";
+      };
+      let arr1 = [0, 0, 0, 150, 0, 0, 650, 0, 0, 0, 0, 0];
+
+      xuanran();
+      function huan(index) {
+        if (index == 1) {
+            arr1 = [0, 0, 0, 150, 0, 0, 650, 0, 0, 0, 0, 0];
+        } else if (index == 2) {
+          arr1 = [0, 15, 62, 45, 80, 33, 100, 30, 28, 11, 70, 39];
+        } else if (index == 3) {
+          arr1 = [0, 35, 62, 45, 80, 19, 31, 54, 72, 12, 82, 0];
+        } else if (index == 4) {
+          arr1 = [0, 5, 62, 45, 52, 100, 82, 49, 12, 25, 22, 99];
+        }
+
+        xuanran();
+      }
+      function xuanran() {
+        var myChart = echarts.init(document.getElementById("main"));
+        option = {
+            title : {
+       
+          text: '单价(元)',
+          textStyle:{
+            fontSize: 12
+          }
+      
+    },
+          xAxis: {
+            type: "category",
+            data: [
+              "00:00",
+              "02:00",
+              "04:00",
+              "06:00",
+              "08:00",
+              "10:00",
+              "12:00",
+              "14:00",
+              "16:00",
+              "18:00",
+              "20:00",
+              "22:00",
+            ],
+          },
+          yAxis: {
+            type: "value",
+            data: ["0", "100", "200", "300", "400", "500", "600", "700"],
+          },
+          legend: {
+            orient: "horizontal",
+          },
+          series: [
+            {
+              name: "成交总额",
+              data: arr1,
+              type: "line",
+            },
+          ],
+        };
+        myChart.setOption(option);
+      }
+    </script>
+  </body>
 </html>
